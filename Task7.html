@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>Item Lister</title>
+</head>
+
+<body>
+  <header id="main-header" class="bg-success text-white p-4 mb-3">
+    <div class="container">
+      <h1 id="header-title">Item Lister <span style="display:none">123</span></h1>
+    </div>
+  </header>
+  <div class="container">
+   <div id="main" class="card card-body">
+    <h2 class="title">Add Items</h2>
+    <form class="form-inline mb-3">
+      <input type="text" class="form-control mr-2">
+      <input type="submit" class="btn btn-dark" value="Submit">
+    </form>
+    <h2 class="title">Items</h2>
+    <ul id="items" class="list-group">
+      <li class="list-group-item">Item 1</li>
+      <li class="list-group-item">Item 2</li>
+      <li class="list-group-item">Item 3</li>
+      <li class="list-group-item">Item 4</li>
+    </ul>
+    <span></span>
+   </div>
+  </div>
+
+  <script>
+      // Traversing the DOM //
+    var itemList = document.querySelector('#items');
+    
+      // parentNode//
+    // console.log(itemList.parentNode);
+    // itemList.parentNode.style.backgroundColor = '#f4f4f4';
+    // console.log(itemList.parentNode.parentNode.parentNode);
+
+      // parent element //
+    // console.log(itemList.parentElement);
+    // itemList.parentElement.style.backgroundColor = '#f4f4f4';
+    // console.log(itemList.parentElement.parentElement.parentElement);
+
+      // child Node //
+    // console.log(itemList.childNodes);  // include line break also
+    // console.log(itemList.childNodes[1]);
+    // console.log(itemList.children);    // only list include
+    // console.log(itemList.children[1]);
+    // itemList.children[1].style.backgroundColor = 'yellow';
+
+      // first child //
+    // console.log(itemList.firstChild);     // its including line break
+
+      // first element child //
+    // console.log(itemList.firstElementChild);
+    // itemList.firstElementChild.textContent = 'Hello 1';
+
+      // last child //
+    // console.log(itemList.lastChild);     // its including line break
+
+      // last element child //
+    // console.log(itemList.lastElementChild);
+    // itemList.lastElementChild.textContent = 'Hello 4';
+
+      // next sibling //
+    //console.log(itemList.nextSibling);      // giving any text node
+
+      // next Element sibling //
+    // console.log(itemList.nextElementSibling); 
+
+      // previous sibling //
+    // console.log(itemList.previousSibling);      // giving any text node
+
+      // previous Element sibling //
+    // console.log(itemList.previousElementSibling); 
+    // itemList.previousElementSibling.style.color = 'green';
+
+     
+              // Create Element //
+    // // create a div
+    // var newDiv = document.createElement('div');
+    //     // add a class
+    //     newDiv.className = 'hello';
+    //     // add a id
+    //     newDiv.id = 'hello1'
+    //     // add attribute
+    //     newDiv.setAttribute('title', 'Hello Div');
+    // console.log(newDiv);
+
+    // // create text node
+    // var newDivText = document.createTextNode('Hello World');
+    //     // add text to div
+    //     newDiv.appendChild(newDivText);
+    //     var container = document.querySelector('header .container');
+    //     var h1 = document.querySelector('header h1');
+  
+    // console.log(newDivText);
+    
+    // newDiv.style.fontSize = '30px';
+    // container.insertBefore(newDiv, h1);
+
+    // Answer of the Question //
+    var newDiv = document.createElement('div'); 
+    var newDivText = document.createTextNode('HELLo word');
+        newDiv.appendChild(newDivText);
+        var container = document.querySelector('header .container');
+        var h1 = document.querySelector('header h1');
+        newDiv.style.fontSize = '20px';
+        container.insertBefore(newDiv, h1);
+
+    var newDiv2 = document.createElement('div'); 
+    var newDivText2 = document.createTextNode('HELLo word');
+        newDiv2.appendChild(newDivText2);
+        var container = document.querySelector('div .list-group');
+        var h1 = document.querySelector('ul li');
+        newDiv2.style.fontSize = '20px';
+        container.insertBefore(newDiv2, h1);
+
+
+  </script>
+
+</body>
+</html>
