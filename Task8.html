@@ -29,10 +29,10 @@
         </form>
         <h2 class="title">Items</h2>
         <ul id="items" class="list-group">
-          <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
-          <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
-          <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
-          <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+          <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
+          <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
+          <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
+          <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
         </ul>
        </div>
       </div>
@@ -42,87 +42,68 @@
           var itemList = document.getElementById('items');
           var filter = document.getElementById('filter');
 
-        //       // Form submit event //
-        //  form.addEventListener('submit', addItem);
+              // Form submit event //
+         form.addEventListener('submit', addItem);
 
-        //       // Delete event //
-        //  itemList.addEventListener('click', removeItem);
+              // Delete event //
+         itemList.addEventListener('click', removeItem);
 
-        //       // Filter event //
-        //  filter.addEventListener('keyup', filterItems);
-
-        //       // Add item //
-        //  function addItem(e){
-        //  e.preventDefault();
-        //  //console.log(1);
+              // Add item //
+         function addItem(e){
+         e.preventDefault();
+         //console.log(1);
          
-        //       // Get input value //
-        //  var newItem = document.getElementById('item').value;
+              // Get input value //
+         var newItem = document.getElementById('item').value;
 
-        //       // Create new li element //
-        //  var li = document.createElement('li');
+              // Create new li element //
+         var li = document.createElement('li');
 
-        //       // Add class //
-        //  li.className = 'list-group-item';
-        //  //console.log(li);
+              // Add class //
+         li.className = 'list-group-item';
+         //console.log(li);
 
-        //       // Add text node with input value //
-        //  li.appendChild(document.createTextNode(newItem));
+              // Add text node with input value //
+         li.appendChild(document.createTextNode(newItem));
 
-        //       // Create del button element //
-        //  var deleteBtn = document.createElement('button');
+              // Create del button element //
+         var deleteBtn = document.createElement('button');
 
-        //       // Add classes to del button //
-        //  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+              // Add classes to del button //
+         deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
 
-        //       // Append text node //
-        //  deleteBtn.appendChild(document.createTextNode('X'));
+              // Append text node //
+         deleteBtn.appendChild(document.createTextNode('X'));
 
-        //       // Append button to li //
-        //  li.appendChild(deleteBtn);
+              // Append button to li //
+         li.appendChild(deleteBtn);
 
-        // //      // Append li to list // 
-        //  itemList.appendChild(li);
-        //  }
+        //      // Append li to list // 
+         itemList.appendChild(li);
+         }
 
-        //       // Remove item //
-        //  function removeItem(e){
-        //     if(e.target.classList.contains('delete')){
-        //         if(confirm('Are You Sure?')){
-        //         var li = e.target.parentElement;
-        //         itemList.removeChild(li);
-        //         }
-        //     }
-        //  }
-
-        //       // Filter Items //
-        //  function filterItems(e){
-
-        //       // convert text to lowercase
-        //  var text = e.target.value.toLowerCase();
-
-        //       // Get lis //
-        //  var items = itemList.getElementsByTagName('li');
-
-        //       // Convert to an array //
-        // Array.from(items).forEach(function(item){
-        //     var itemName = item.firstChild.textContent;
-        //     if(itemName.toLowerCase().indexOf(text) != -1){
-        //     item.style.display = 'block';
-        //     } else {
-        //     item.style.display = 'none';
-        //     }
-        // });
-        // }
+              // Remove item //
+         function removeItem(e){
+            if(e.target.classList.contains('delete')){
+                if(confirm('Are You Sure?')){
+                var li = e.target.parentElement;
+                itemList.removeChild(li);
+                }
+            }
+         }
+        
 
                 // Answer Of the Question //
-        var btn = document.createElement('button');
-        var btnText = btn.createTextNode('Edit');
-        btn.id = "edit btn";
-        btn.appendChild(btnText);
-        li.appendChild(btn);
-        ul.appendChild(li);
-        body.appendChild(ul);
+
+
+          //  var editBtn = document.createElement('button');
+          //  editBtn.className = 'btn float-right edit';
+          //   editBtn.appendChild(document.createTextNode('Edit'));
+          //   li.appendChild(editBtn);
+          //   ul.appendChild('li');
+          //   body.appendChild(ul);
+
+
 
     </script>
 </body>
