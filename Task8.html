@@ -8,7 +8,7 @@
     <title>Item Lister</title>
 </head>
 <body>
-    <header id="main-header" class="bg-success text-white p-4 mb-3">
+      <header id="main-header" class="bg-success text-white p-4 mb-3">
         <div class="container">
           <div class="row">
             <div class="col-md-6">
@@ -29,19 +29,19 @@
         </form>
         <h2 class="title">Items</h2>
         <ul id="items" class="list-group">
-          <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
-          <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
-          <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
-          <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button> <button class="float-right">Edit</button></li>
+          <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+          <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+          <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+          <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
         </ul>
        </div>
       </div>
 
     <script>
+
           var form = document.getElementById('addForm');
           var itemList = document.getElementById('items');
-          var filter = document.getElementById('filter');
-
+          
               // Form submit event //
          form.addEventListener('submit', addItem);
 
@@ -78,7 +78,7 @@
               // Append button to li //
          li.appendChild(deleteBtn);
 
-        //      // Append li to list // 
+              // Append li to list // 
          itemList.appendChild(li);
          }
 
@@ -91,20 +91,21 @@
                 }
             }
          }
-        
 
-                // Answer Of the Question //
+                // Answer Of the Ques  //
 
+      var listItems = document.getElementsByClassName("list-group-item");
+      console.log(listItems);
+      for(var i = 0; i < listItems.length; i++){
+        var btn = document.createElement('button');
+        btn.innerText = 'Edit';
+        btn.id = 'Edit-button';
+        btn.className ='btn float-right';
+        btn.style.backgroundColor = 'yellow';
+        listItems[i].appendChild(btn);
+      }
 
-          //  var editBtn = document.createElement('button');
-          //  editBtn.className = 'btn float-right edit';
-          //   editBtn.appendChild(document.createTextNode('Edit'));
-          //   li.appendChild(editBtn);
-          //   ul.appendChild('li');
-          //   body.appendChild(ul);
-
-
-
+      
     </script>
 </body>
 </html>
