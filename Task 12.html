@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Item Lister</title>
+</head>
+<body>
+    
+      <div class="container">
+       <div id="main" class="card card-body">
+        <h2 class="title">User Input Task 12</h2>
+        
+        <form onsubmit="UserInput()" id="addForm" class="form-inline mb-3">
+            Name:
+          <input type="text" class="form-control mr-2" id="name" placeholder=" User">
+            Email Id:
+          <input type="email" class="form-control mr-2" id="emailid" placeholder="User@gmail.com">
+            Phone Number:
+          <input type="number" class="form-control mr-2" id="Phonenumber" placeholder="0123456789">
+          <input type="submit" class="btn btn-dark" value="Submit">
+        </form> 
+
+       </div>
+      </div>
+
+    <script>
+        function UserInput(){
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('emailid').value;
+            var number = document.getElementById('Phonenumber').value;
+            // alert(name+" "+ email +" "+ number);
+
+            jsonObject = {
+                'Name': '',
+                'Email_Id': '',
+                'Phone_Number' : ''
+            }
+            jsonObject.Name = name;
+            jsonObject.Email_Id = email;
+            jsonObject.Phone_Number = number;
+
+            var str = JSON.stringify(jsonObject);
+            localStorage.setItem(email, str); 
+        }
+
+    </script>
+</body>
+</html>
