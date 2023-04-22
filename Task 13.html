@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Item Lister</title>
+</head>
+<body>
+    
+        <h2 class="title">User Input Task 13</h2>
+        
+        <form onsubmit="UserInput()" id="addForm" class="form-inline mb-3">
+            Name:
+          <input type="text" class="form-control mr-2" id="name" placeholder=" User">
+            Email Id:
+          <input type="email" class="form-control mr-2" id="emailid" placeholder="User@gmail.com">
+            Phone Number:
+          <input type="number" class="form-control mr-2" id="Phonenumber" placeholder="0123456789">
+          <input type="submit" class="btn btn-dark" value="Submit Data">
+          <br>
+          
+
+        </form> 
+        <ul id="listofitems"></ul>
+     
+    <script>
+
+        function UserInput(){
+            event.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('emailid').value;
+            var number = document.getElementById('Phonenumber').value;
+            // alert(name +" "+ email +" "+ number);
+
+            // jsonObject = {
+            //     'Name': '',
+            //     'Email_Id': '',
+            //     'Phone_Number' : ''
+            // }
+            // jsonObject.Name = name;
+            // jsonObject.Email_Id = email;
+            // jsonObject.Phone_Number = number;
+
+            // var str = JSON.stringify(jsonObject);
+            // localStorage.setItem(email, str); 
+
+// Second way to store in local storage //       
+
+            var strr ={name,email,number};
+            localStorage.setItem(strr.email,JSON.stringify(strr));
+            showdata(strr);
+        }
+
+        function showdata(strr){
+          var parent = document.getElementById('listofitems');
+          var li = document.createElement('li');
+          li.textContent = 'Name: '+ strr.name +' ,Email_Id: '+ strr.email +' ,Phone_Number: '+ strr.number;
+
+          var input=document.createElement('input');
+          input.setAttribute('type','button');
+          input.setAttribute('value','delete');
+          input.setAttribute('data-email', strr.email);
+          input.addEventListener('click', ()=>{                                     //  input.onclick=()=>
+
+          parent.removeChild(li);
+          localStorage.removeItem(strr.email);
+
+          });
+
+          li.appendChild(input);
+          parent.appendChild(li);
+
+      }
+
+
+    </script>
+
+</body>
+</html>
